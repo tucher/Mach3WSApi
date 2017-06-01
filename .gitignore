@@ -1,0 +1,17 @@
+
+build-QtWsTransport-Desktop_Qt_5_7_1_clang_64bit-Debug/*
+build-QtWsTransport-Desktop_Qt_5_8_0_MSVC2015_32bit-Release/*
+SDK/CustomPlugin_050408/Release/*
+build/QtWsTransport.exp
+
+QtWsTransport/QtWsTransport.pro.user
+
+SDK/CustomPlugin_050408/.vs/*
+
+SDK/CustomPlugin_050408/Backup/CustomPlugin.sln
+
+SDK/CustomPlugin_050408/ipch/CUSTOMPLUGIN-a64f7d93/CUSTOMPLUGIN-74ee7450.ipch
+
+SDK/MachPlugin/.vs/CustomPlugin/v14/.suo
+
+SDK/MachPlugin/Backup/CustomPlugin.sln
