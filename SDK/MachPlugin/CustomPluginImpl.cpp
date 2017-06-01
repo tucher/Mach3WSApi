@@ -18,12 +18,14 @@
 #include <math.h> 
 
 #include "QtWsTransport.h"
+#include "CMyScriptObject.h"
 
 HWND mach3Wnd;
 CWnd mach3CWnd;
 
 CPluginTestDlg *dlg;
 
+extern CMyScriptObject scripter;
 QtWsTransport * g_pluginRemote;
 // ===========================================================================
 // 
@@ -163,6 +165,11 @@ void myUpdate()
 		break;
 	case QtWsTransport::CMD_LOAD_CODE:
 		LoadGcodeFile("C:\\CNC\\spirals.nc");
+		break;
+	case QtWsTransport::CMD_ZERO_AXIS:
+		scripter.SetDRO(83, 0);
+		scripter.SetDRO(84, 0);
+		scripter.SetDRO(85, 0);
 		break;
 	}
 	// DbgMsg(("myUpdate exit"));
