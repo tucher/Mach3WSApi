@@ -15,3 +15,16 @@ SDK/CustomPlugin_050408/ipch/CUSTOMPLUGIN-a64f7d93/CUSTOMPLUGIN-74ee7450.ipch
 SDK/MachPlugin/.vs/CustomPlugin/v14/.suo
 
 SDK/MachPlugin/Backup/CustomPlugin.sln
+
+build/CustomPlugin.pdb
+
+build/CustomPlugin.exp
+
+SDK/MachPlugin/Release/*
+SDK/MachPlugin/CustomPlugin.VC.db
+
+SDK/MachPlugin/CustomPlugin.VC.VC.opendb
+
+SDK/MachPlugin/Release/CustomPlugin.Build.CppClean.log
+
+SDK/MachPlugin/Release/CustomPlugin.log
