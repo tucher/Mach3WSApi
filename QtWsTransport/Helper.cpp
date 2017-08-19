@@ -4,6 +4,7 @@
 #include <QThread>
 #include "QtWsTransport.h"
 #include <QJsonDocument>
+#include <QDateTime>
 Helper::Helper(QtWsTransport *parent) : QObject(nullptr),
     m_serverUrl("ws://127.0.0.1:8666"), m_parent(parent)
 {
@@ -48,7 +49,19 @@ void Helper::onTextMessageReceived(QString msg)
     {
         auto params = d.toVariant().toMap();
         auto cmd = params.value("cmd").toString();
-        if(cmd == "load_gcode") m_parent->SetFileName(params.value("file_name").toString().toStdString());
-        m_parent->SetLastCommand(g_cmds.value(cmd));
+        if(cmd == "load_gcode")
+        {
+            QString gcode = params.value("gcode").toString();
+            QString fileName = "C:\\CNC\\" + QString::number(QDateTime::currentDateTime().toMSecsSinceEpoch()) + ".nc";
+            QFile file(fileName);
+            if(file.open(QIODevice::WriteOnly))
+            {
+                file.write(gcode.toUtf8());
+                file.close();
+            }
+            m_parent->SetFileName(fileName.toStdString());
+            m_parent->SetLastCommand(QtWsTransport::CMD_LOAD_CODE);
+        }
+
     }
 }

@@ -164,7 +164,7 @@ void myUpdate()
 		MessageBox(NULL, "CMD_START", "Config OK", MB_OK);
 		break;
 	case QtWsTransport::CMD_LOAD_CODE:
-		LoadGcodeFile("C:\\CNC\\spirals.nc");
+		LoadGcodeFile((char*)g_pluginRemote->FileName().c_str());
 		break;
 	case QtWsTransport::CMD_ZERO_AXIS:
 		scripter.SetDRO(83, 0);
